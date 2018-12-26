@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity"
+    android:background="#ffffff">
+
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:background="#ffffff">
+
+        <TableRow>
+            <TextView
+                android:background="@drawable/table"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WE"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginRight="2dp" />
+            <TextView
+                android:background="@drawable/table"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="THEM"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginLeft="2dp"/>
+        </TableRow>
+
+       <TableRow>
+            <LinearLayout
+                android:id="@+id/LinearLayoutItemWe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:orientation="vertical"
+                tools:context=".GameActivity"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginRight="2dp">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvViewWe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+
+           <LinearLayout
+               android:id="@+id/LinearLayoutItemThem"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               xmlns:android="http://schemas.android.com/apk/res/android"
+               xmlns:app="http://schemas.android.com/apk/res-auto"
+               xmlns:tools="http://schemas.android.com/tools"
+               android:orientation="vertical"
+               tools:context=".GameActivity"
+               android:layout_toRightOf="@+id/LinearLayoutItemWe"
+               android:layout_weight="1"
+               android:gravity="center"
+               android:layout_marginLeft="2dp">
+                   <android.support.v7.widget.RecyclerView
+                       android:id="@+id/rvViewThem"
+                       android:layout_width="wrap_content"
+                       android:layout_height="0dp"
+                       android:layout_weight="1">
+                   </android.support.v7.widget.RecyclerView>
+               </LinearLayout>
+       </TableRow>
+    </TableLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true">
+
+
+        <Button
+            android:id="@+id/addResultButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table"
+            android:text="ADD RESULT"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"/>
+
+    </RelativeLayout>
+
+     
+
+</RelativeLayout>
+
+
+

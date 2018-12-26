@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name"> La Bela</string>
+    <string name="new_game">New game</string>
+    <string name="rules">Check out rules</string>
+    <string name="exit_game">Exit</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

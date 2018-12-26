@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity"
+    android:background="#ffffff">
+
+    <TableLayout
+        android:id="@+id/result_table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:background="#ffffff">
+
+        <TableRow
+            >
+            <TextView
+                android:background="@drawable/table"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WE"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginRight="1dp"
+                />
+            <TextView
+                android:background="@drawable/table"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="THEM"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginLeft="1dp"/>
+        </TableRow>
+
+        <TableRow>
+            <EditText
+                android:id="@+id/editTextWe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Enter result"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginLeft="1dp"
+                android:inputType="number"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <EditText
+                android:id="@+id/editTextThem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Enter result"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginLeft="1dp"
+                android:inputType="number"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+        </TableRow>
+
+        <TableRow>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginLeft="1dp">
+
+            <ToggleButton
+                android:id="@+id/toggleButton20We"
+                android:background="@drawable/togglebutton_selector"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginLeft="1dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:textOn="20"
+                android:textOff="20"/>
+
+
+
+            <ToggleButton
+                android:id="@+id/toggleButton50We"
+                android:background="@drawable/togglebutton_selector"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginLeft="1dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:textOn="50"
+                android:textOff="50"/>
+
+
+            <ToggleButton
+                android:id="@+id/toggleButton90We"
+                android:background="@drawable/togglebutton_selector"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginLeft="1dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:textOn="90"
+                android:textOff="90"/>
+
+            <ToggleButton
+                android:id="@+id/toggleButton100We"
+                android:background="@drawable/togglebutton_selector"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginLeft="1dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:textOn="100"
+                android:textOff="100"/>
+
+            <ToggleButton
+                android:id="@+id/toggleButton150We"
+                android:background="@drawable/togglebutton_selector"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginLeft="1dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:textOn="150"
+                android:textOff="150"/>
+
+            <ToggleButton
+                android:id="@+id/toggleButton200We"
+                android:background="@drawable/togglebutton_selector"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginLeft="1dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:textOn="200"
+                android:textOff="200"
+                />
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginLeft="1dp">
+
+                <ToggleButton
+                    android:id="@+id/toggleButton20Them"
+                    android:background="@drawable/togglebutton_selector"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="2dp"
+                    android:textOn="20"
+                    android:textOff="20"/>
+
+
+
+                <ToggleButton
+                    android:id="@+id/toggleButton50Them"
+                    android:background="@drawable/togglebutton_selector"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="2dp"
+                    android:textOn="50"
+                    android:textOff="50"/>
+
+
+                <ToggleButton
+                    android:id="@+id/toggleButton90Them"
+                    android:background="@drawable/togglebutton_selector"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="2dp"
+                    android:textOn="90"
+                    android:textOff="90"/>
+
+                <ToggleButton
+                    android:id="@+id/toggleButton100Them"
+                    android:background="@drawable/togglebutton_selector"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="2dp"
+                    android:textOn="100"
+                    android:textOff="100"/>
+
+                <ToggleButton
+                    android:id="@+id/toggleButton150Them"
+                    android:background="@drawable/togglebutton_selector"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="2dp"
+                    android:textOn="150"
+                    android:textOff="150"/>
+
+                <ToggleButton
+                    android:id="@+id/toggleButton200Them"
+                    android:background="@drawable/togglebutton_selector"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="2dp"
+                    android:textOn="200"
+                    android:textOff="200"
+                    />
+            </LinearLayout>
+        </TableRow>
+
+
+
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp">
+    <Button
+        android:id="@+id/doneButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="DONE"
+        android:textSize="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/table" />
+
+    </LinearLayout>
+
+</RelativeLayout>
