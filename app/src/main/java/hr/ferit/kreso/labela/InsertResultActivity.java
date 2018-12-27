@@ -36,6 +36,9 @@ public class InsertResultActivity extends AppCompatActivity {
     private Button doneButton;
     private int callSumWe=0,callSumThem=0,sumWe=0,sumThem=0;
 
+    public ArrayList<Integer> pointsWe;
+    public ArrayList<Integer> pointsThem;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,9 @@ public class InsertResultActivity extends AppCompatActivity {
         getSupportActionBar().hide(); //hide app name bar
         setContentView(R.layout.activity_insert_result);
 
+        Intent intent = getIntent();
+        pointsWe =  intent.getExtras().getIntegerArrayList("pointsArrayWe");
+        pointsThem =  intent.getExtras().getIntegerArrayList("pointsArrayThem");
         editTextWe=(EditText)findViewById(R.id.editTextWe);
         editTextThem=(EditText)findViewById(R.id.editTextThem);
         editTextWe.setFilters(new InputFilter[]{new InputFilterMinMax("0","162")});
@@ -306,9 +312,12 @@ public class InsertResultActivity extends AppCompatActivity {
 
     private void goBackToTable(int sum) {
         if(sum!=0 && editTextWe.getText().toString().trim().length()>0 && editTextThem.getText().toString().trim().length()>0) {
+            pointsWe.add(sumWe);
+            pointsThem.add(sumThem);
             Intent intent = new Intent(this, GameActivity.class);
-            intent.putExtra("we",sumWe);
-            intent.putExtra("them",sumThem);
+            intent.putExtra("emptyList", false);
+            intent.putExtra("we",pointsWe);
+            intent.putExtra("them",pointsThem);
             startActivity(intent);
         }
         else{

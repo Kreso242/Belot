@@ -16,13 +16,13 @@ import java.util.List;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
 
-    private ArrayList<String> points=new ArrayList<>();
+    private ArrayList<Integer> points = new ArrayList<>();
     private Context context;
     private ImageClickInterface imageClick;
 
 
-   public RecyclerViewAdapter(ArrayList<String> points){
-        this.points=points;
+   public RecyclerViewAdapter(Context context){
+       this.context = context;
     }
 
     @NonNull
@@ -35,7 +35,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-        holder.setName(points.get(position));
+        holder.setName(points.get(position).toString());
         holder.parent_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,18 +50,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
 
-    public void addData(List<String> data){
+    public void addData(List<Integer> data){
         points.clear();
         points.addAll(data);
         notifyDataSetChanged();
     }
 
-    public void insertNewItem(String name,int position){
-        if(position>=0 && position<=points.size()){
-            points.add(position,name);
-            notifyItemInserted(position);
-        }
-    }
+    //  ova metoda ti ne treba jer recycleru predaješ cijeli array kroz metodu addData
+//    public void insertNewItem(String name,int position){
+//        if(position>=0 && position<=points.size()){
+//            points.add(position,name);
+//            notifyItemInserted(position);
+//        }
+//    }
 
     public void removeItem(int position){
         if(position>=0 && position<points.size()){

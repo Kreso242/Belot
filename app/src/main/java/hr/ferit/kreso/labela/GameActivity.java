@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import java.net.Inet4Address;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
@@ -28,8 +29,8 @@ public class GameActivity extends AppCompatActivity implements ImageClickInterfa
     private RecyclerViewAdapter adapterWe;
     private RecyclerViewAdapter2 adapterThem;
 
-    private ArrayList<String> pointsWe=new ArrayList<>();
-    private ArrayList<String> pointsThem=new ArrayList<>();
+    private ArrayList<Integer> pointsWe=new ArrayList<>();
+    private ArrayList<Integer> pointsThem=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,18 +44,20 @@ public class GameActivity extends AppCompatActivity implements ImageClickInterfa
             recyclerViewThem = findViewById(R.id.rvViewThem);
             recyclerViewThem.setLayoutManager(new LinearLayoutManager(this));
 
-            adapterWe = new RecyclerViewAdapter(pointsWe);
-            adapterThem=new RecyclerViewAdapter2(pointsThem);
+            adapterWe = new RecyclerViewAdapter(this);
+            adapterThem=new RecyclerViewAdapter2(this);
 
             recyclerViewWe.setAdapter(adapterWe);
             recyclerViewThem.setAdapter(adapterThem);
 
             Intent intent = getIntent();
-            we = intent.getIntExtra("we", 0);
-            them = intent.getIntExtra("them", 0);
-
-            adapterWe.insertNewItem(String.valueOf(we), adapterWe.getItemCount());
-            adapterThem.insertNewItem(String.valueOf(them), adapterThem.getItemCount());
+            //ako je list prazan ne puni recyclerview postavit ćemo ga u false kad unesemo prvi rezultat i onda će se punit recycler
+            if (!intent.getBooleanExtra("emptyList", true)) {
+                pointsWe.addAll(intent.getIntegerArrayListExtra("we"));
+                pointsThem.addAll(intent.getIntegerArrayListExtra("them"));
+                adapterWe.addData(pointsWe);
+                adapterThem.addData(pointsThem);
+            }
 
 
             exitButton=(Button)findViewById(R.id.ExitButton2);
@@ -78,6 +81,8 @@ public class GameActivity extends AppCompatActivity implements ImageClickInterfa
 
     private void addResult() {
         Intent intent=new Intent(this,InsertResultActivity.class);
+        intent.putExtra("pointsArrayWe", pointsWe);
+        intent.putExtra("pointsArrayThem", pointsThem);
         startActivity(intent);
 
     }

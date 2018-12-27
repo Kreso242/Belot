@@ -12,7 +12,6 @@
     android:layout_marginRight="4dp"
     android:background="@drawable/background">
 
-
 <TableLayout
         android:id="@+id/table"
         android:layout_width="match_parent"
