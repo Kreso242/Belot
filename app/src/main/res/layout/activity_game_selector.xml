@@ -5,21 +5,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameSelectorActivity">
+    tools:context=".GameSelectorActivity"
+    android:layout_marginLeft="4dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:layout_marginRight="4dp"
+    android:background="@drawable/background">
 
     <LinearLayout
         android:id="@+id/textViewLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginLeft="25dp"
+        android:layout_marginBottom="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/radioButtonsLayout"
+        >
     <TextView
         android:id="@+id/playingToTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#163e0d"
         android:text="Playing up to:"
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="25dp"
        />
     </LinearLayout>
 
@@ -28,13 +37,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@+id/textViewLayout"
-        android:orientation="vertical">
+        android:layout_marginBottom="25dp"
+        android:layout_marginRight="25dp"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true">
 
     <RadioGroup
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        >
         
         <RadioButton
             android:id="@+id/radioButton1001"
@@ -43,7 +55,8 @@
             android:layout_alignTop="@+id/radioButtonsLayout"
             android:layout_alignRight="@+id/playingToTextView"
             android:text="1001"
-            android:textSize="20dp"
+            android:textSize="25dp"
+            android:textColor="#163e0d"
             android:textAlignment="center"
             android:textStyle="bold"
             android:layout_marginBottom="3dp"/>
@@ -55,7 +68,9 @@
             android:layout_alignTop="@+id/radioButtonsLayout"
             android:layout_alignRight="@+id/playingToTextView"
             android:text="701"
-            android:textSize="20dp"
+            android:textSize="25dp"
+            android:textColor="#163e0d"
+
             android:textAlignment="center"
             android:textStyle="bold"
             android:layout_marginBottom="3dp"/>
@@ -67,7 +82,9 @@
             android:layout_alignTop="@+id/radioButtonsLayout"
             android:layout_alignRight="@+id/playingToTextView"
             android:text="501"
-            android:textSize="20dp"
+            android:textSize="25dp"
+            android:textColor="#163e0d"
+
             android:textAlignment="center"
             android:textStyle="bold" />
     </RadioGroup>

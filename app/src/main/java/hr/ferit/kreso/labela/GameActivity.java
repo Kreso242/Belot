@@ -1,5 +1,6 @@
 package hr.ferit.kreso.labela;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.PersistableBundle;
 import android.support.v4.view.PagerAdapter;
@@ -21,7 +22,7 @@ import java.util.Locale;
 
 public class GameActivity extends AppCompatActivity implements ImageClickInterface   {
 
-    private Button addResultButton;
+    private Button addResultButton,exitButton;
     private int sumWe=0,sumThem=0,we,them;
     private RecyclerView recyclerViewWe,recyclerViewThem;
     private RecyclerViewAdapter adapterWe;
@@ -55,6 +56,15 @@ public class GameActivity extends AppCompatActivity implements ImageClickInterfa
             adapterWe.insertNewItem(String.valueOf(we), adapterWe.getItemCount());
             adapterThem.insertNewItem(String.valueOf(them), adapterThem.getItemCount());
 
+
+            exitButton=(Button)findViewById(R.id.ExitButton2);
+            exitButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finishAffinity();
+                    System.exit(0);
+                }
+            });
 
             addResultButton = (Button) findViewById(R.id.addResultButton);
             addResultButton.setOnClickListener(new View.OnClickListener() {

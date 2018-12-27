@@ -9,6 +9,7 @@ import android.renderscript.ScriptGroup;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputFilter;
 import android.text.InputType;
 import android.text.Layout;
 import android.text.TextWatcher;
@@ -31,6 +32,7 @@ public class InsertResultActivity extends AppCompatActivity {
     private ToggleButton toggleButton20Them,toggleButton50Them;
     private ToggleButton toggleButton90Them,toggleButton100Them;
     private ToggleButton toggleButton150Them,toggleButton200Them;
+    private ToggleButton toggleButton40We,toggleButton40Them;
     private Button doneButton;
     private int callSumWe=0,callSumThem=0,sumWe=0,sumThem=0;
 
@@ -41,15 +43,17 @@ public class InsertResultActivity extends AppCompatActivity {
         getSupportActionBar().hide(); //hide app name bar
         setContentView(R.layout.activity_insert_result);
 
-
         editTextWe=(EditText)findViewById(R.id.editTextWe);
         editTextThem=(EditText)findViewById(R.id.editTextThem);
+        editTextWe.setFilters(new InputFilter[]{new InputFilterMinMax("0","162")});
+        editTextThem.setFilters(new InputFilter[]{new InputFilterMinMax("0","162")});
         editTextWe.setText("");
         editTextThem.setText("");
 
         doneButton=(Button)findViewById(R.id.doneButton);
 
         toggleButton20We=(ToggleButton)findViewById(R.id.toggleButton20We);
+        toggleButton40We=(ToggleButton)findViewById(R.id.toggleButton40We);
         toggleButton50We=(ToggleButton)findViewById(R.id.toggleButton50We);
         toggleButton90We=(ToggleButton)findViewById(R.id.toggleButton90We);
         toggleButton100We=(ToggleButton)findViewById(R.id.toggleButton100We);
@@ -57,6 +61,7 @@ public class InsertResultActivity extends AppCompatActivity {
         toggleButton200We=(ToggleButton)findViewById(R.id.toggleButton200We);
 
         toggleButton20Them=(ToggleButton)findViewById(R.id.toggleButton20Them);
+        toggleButton40Them=(ToggleButton)findViewById(R.id.toggleButton40Them);
         toggleButton50Them=(ToggleButton)findViewById(R.id.toggleButton50Them);
         toggleButton90Them=(ToggleButton)findViewById(R.id.toggleButton90Them);
         toggleButton100Them=(ToggleButton)findViewById(R.id.toggleButton100Them);
@@ -92,6 +97,19 @@ public class InsertResultActivity extends AppCompatActivity {
                 }
                 else{
                     callSumWe=callSumWe-20;
+                }
+            }
+        });
+
+        toggleButton40We.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(isChecked){
+                    callSumWe=callSumWe+40;
+                }
+                else{
+                    callSumWe=callSumWe-40;
                 }
             }
         });
@@ -170,6 +188,19 @@ public class InsertResultActivity extends AppCompatActivity {
                 }
                 else{
                     callSumThem=callSumThem-20;
+                }
+            }
+        });
+
+        toggleButton40Them.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(isChecked){
+                    callSumThem=callSumThem+40;
+                }
+                else{
+                    callSumThem=callSumThem-40;
                 }
             }
         });

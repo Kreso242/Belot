@@ -41,7 +41,7 @@
         android:layout_marginRight="1dp"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@id/appName"
-        />
+        android:background="#ffffff"        />
 
 
 
@@ -50,6 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
+        android:textColor="#0d2508"
         android:layout_marginBottom="30dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"

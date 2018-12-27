@@ -7,42 +7,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GameActivity"
-    android:background="#ffffff">
+    android:layout_marginLeft="4dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:layout_marginRight="4dp"
+    android:background="@drawable/background">
 
-    <TableLayout
+<TableLayout
         android:id="@+id/result_table"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
-        android:background="#ffffff">
+       >
 
-        <TableRow
-            >
-            <TextView
-                android:background="@drawable/table"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="WE"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_marginRight="1dp"
-                />
-            <TextView
-                android:background="@drawable/table"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="THEM"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_marginLeft="1dp"/>
-        </TableRow>
+    <TableRow>
+        <TextView
+            android:background="@drawable/table"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="WE"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginRight="2dp" />
+        <TextView
+            android:background="@drawable/table"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="THEM"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginLeft="2dp"/>
+    </TableRow>
+</TableLayout>
 
+    <TableLayout
+        android:id="@+id/results"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/result_table"
+        android:background="@drawable/background_call"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp">
         <TableRow>
             <EditText
                 android:id="@+id/editTextWe"
@@ -53,9 +67,9 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:layout_marginLeft="1dp"
+                android:maxLength="3"
                 android:inputType="number"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
+                />
 
             <EditText
                 android:id="@+id/editTextThem"
@@ -66,19 +80,29 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:layout_marginLeft="1dp"
+                android:maxLength="3"
                 android:inputType="number"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
+              />
         </TableRow>
 
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/calls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/results"
+        android:background="@drawable/background_call">
         <TableRow>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_weight="1"
-            android:gravity="center"
-            android:layout_marginLeft="1dp">
+            android:gravity="center">
 
             <ToggleButton
                 android:id="@+id/toggleButton20We"
@@ -89,10 +113,24 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_marginLeft="1dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginTop="2dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="10dp"
                 android:textOn="20"
                 android:textOff="20"/>
+
+            <ToggleButton
+                android:id="@+id/toggleButton40We"
+                android:background="@drawable/togglebutton_selector"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginLeft="1dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
+                android:textOn="40"
+                android:textOff="40"/>
 
 
 
@@ -105,8 +143,8 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_marginLeft="1dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginTop="2dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
                 android:textOn="50"
                 android:textOff="50"/>
 
@@ -120,8 +158,8 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_marginLeft="1dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginTop="2dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
                 android:textOn="90"
                 android:textOff="90"/>
 
@@ -134,8 +172,8 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_marginLeft="1dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginTop="2dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
                 android:textOn="100"
                 android:textOff="100"/>
 
@@ -148,8 +186,8 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_marginLeft="1dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginTop="2dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
                 android:textOn="150"
                 android:textOff="150"/>
 
@@ -162,8 +200,8 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_marginLeft="1dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginTop="2dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="4dp"
                 android:textOn="200"
                 android:textOff="200"
                 />
@@ -186,12 +224,24 @@
                     android:layout_weight="1"
                     android:layout_gravity="center"
                     android:layout_marginLeft="1dp"
-                    android:layout_marginBottom="2dp"
-                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="10dp"
                     android:textOn="20"
                     android:textOff="20"/>
 
-
+                <ToggleButton
+                    android:id="@+id/toggleButton40Them"
+                    android:background="@drawable/togglebutton_selector"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:textOn="40"
+                    android:textOff="40"/>
 
                 <ToggleButton
                     android:id="@+id/toggleButton50Them"
@@ -202,8 +252,8 @@
                     android:layout_weight="1"
                     android:layout_gravity="center"
                     android:layout_marginLeft="1dp"
-                    android:layout_marginBottom="2dp"
-                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
                     android:textOn="50"
                     android:textOff="50"/>
 
@@ -217,8 +267,8 @@
                     android:layout_weight="1"
                     android:layout_gravity="center"
                     android:layout_marginLeft="1dp"
-                    android:layout_marginBottom="2dp"
-                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
                     android:textOn="90"
                     android:textOff="90"/>
 
@@ -231,8 +281,8 @@
                     android:layout_weight="1"
                     android:layout_gravity="center"
                     android:layout_marginLeft="1dp"
-                    android:layout_marginBottom="2dp"
-                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
                     android:textOn="100"
                     android:textOff="100"/>
 
@@ -245,8 +295,8 @@
                     android:layout_weight="1"
                     android:layout_gravity="center"
                     android:layout_marginLeft="1dp"
-                    android:layout_marginBottom="2dp"
-                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
                     android:textOn="150"
                     android:textOff="150"/>
 
@@ -259,8 +309,8 @@
                     android:layout_weight="1"
                     android:layout_gravity="center"
                     android:layout_marginLeft="1dp"
-                    android:layout_marginBottom="2dp"
-                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="4dp"
                     android:textOn="200"
                     android:textOff="200"
                     />

@@ -36,6 +36,7 @@
             android:id="@+id/RulesButton"
             android:layout_width="150dp"
             android:layout_height="50dp"
+            android:background="@drawable/table"
             android:layout_marginRight="25dp"
             android:text="@string/rules"/>
 
@@ -43,6 +44,7 @@
             android:id="@+id/NewGameButton"
             android:layout_width="150dp"
             android:layout_height="50dp"
+            android:background="@drawable/table"
             android:layout_marginLeft="25dp"
             android:text="@string/new_game"/>
     </LinearLayout>
@@ -57,6 +59,8 @@
 
         <Button
             android:id="@+id/ExitButton"
+            android:background="@drawable/table"
+
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:text="@string/exit_game"/>
