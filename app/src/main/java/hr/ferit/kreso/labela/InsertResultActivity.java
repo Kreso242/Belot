@@ -76,24 +76,62 @@ public class InsertResultActivity extends AppCompatActivity {
         toggleButton150Them=(ToggleButton)findViewById(R.id.toggleButton150Them);
         toggleButton200Them=(ToggleButton)findViewById(R.id.toggleButton200Them);
 
-                    editTextWe.addTextChangedListener(new TextWatcher() {
-                        @Override
-                        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                        }
+        final TextWatcher textWatcherWe = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
-                        @Override
-                        public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
 
-                        @Override
-                        public void afterTextChanged(Editable s) {
-                            if (editTextWe.getText().toString().matches("")) {
-                                editTextThem.setText(String.valueOf(162));
-                            } else
-                                editTextThem.setText(String.valueOf(162 - Integer.parseInt(editTextWe.getText().toString())));
-                        }
-                    });
-                    
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (editTextWe.getText().toString().matches("")) {
+                    editTextThem.setText(String.valueOf(162));
+                } else
+                    editTextThem.setText(String.valueOf(162 - Integer.parseInt(editTextWe.getText().toString())));
+            }
+        };
+        editTextWe.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (b) {
+                    editTextWe.addTextChangedListener(textWatcherWe);
+                }
+                else
+                    editTextWe.removeTextChangedListener(textWatcherWe);
+            }
+        });
+        final TextWatcher textWatcherThem = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (editTextThem.getText().toString().matches("")) {
+                    editTextWe.setText(String.valueOf(162));
+                } else
+                    editTextWe.setText(String.valueOf(162 - Integer.parseInt(editTextThem.getText().toString())));
+            }
+        };
+
+editTextThem.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+    @Override
+    public void onFocusChange(View view, boolean b) {
+        if (b){
+            editTextThem.addTextChangedListener(textWatcherThem);
+        }
+        else
+            editTextThem.removeTextChangedListener(textWatcherThem);
+    }
+});
+
 
 
         toggleButton20We.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -281,8 +319,10 @@ public class InsertResultActivity extends AppCompatActivity {
         doneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sumWe=sumOfAllWe();
-                sumThem=sumOfAllThem();
+
+                    sumWe=sumOfAllWe();
+
+                    sumThem=sumOfAllWe();
                 goBackToTable(sumWe+sumThem);
             }
         });
