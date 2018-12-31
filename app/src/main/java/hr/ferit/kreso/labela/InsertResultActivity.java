@@ -34,7 +34,7 @@ public class InsertResultActivity extends AppCompatActivity {
     private ToggleButton toggleButton150Them,toggleButton200Them;
     private ToggleButton toggleButton40We,toggleButton40Them;
     private Button doneButton;
-    private int callSumWe=0,callSumThem=0,sumWe=0,sumThem=0;
+    private int callSumWe=0,callSumThem=0,sumWe=0,sumThem=0,upTo;
 
     public ArrayList<Integer> pointsWe;
     public ArrayList<Integer> pointsThem;
@@ -49,6 +49,8 @@ public class InsertResultActivity extends AppCompatActivity {
         Intent intent = getIntent();
         pointsWe =  intent.getExtras().getIntegerArrayList("pointsArrayWe");
         pointsThem =  intent.getExtras().getIntegerArrayList("pointsArrayThem");
+        upTo=intent.getIntExtra("upTo",upTo);
+
         editTextWe=(EditText)findViewById(R.id.editTextWe);
         editTextThem=(EditText)findViewById(R.id.editTextThem);
         editTextWe.setFilters(new InputFilter[]{new InputFilterMinMax("0","162")});
@@ -74,24 +76,24 @@ public class InsertResultActivity extends AppCompatActivity {
         toggleButton150Them=(ToggleButton)findViewById(R.id.toggleButton150Them);
         toggleButton200Them=(ToggleButton)findViewById(R.id.toggleButton200Them);
 
-            editTextWe.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                    }
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) { }
+                    editTextWe.addTextChangedListener(new TextWatcher() {
+                        @Override
+                        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                        }
 
-                    @Override
-                    public void afterTextChanged(Editable s) {
-                        String We=editTextWe.getText().toString();
-                        if(We.matches("")){
-                            editTextWe.setText(String.valueOf(0));
+                        @Override
+                        public void onTextChanged(CharSequence s, int start, int before, int count) {
                         }
-                        else {
-                            editTextThem.setText(String.valueOf(162 - Integer.parseInt(editTextWe.getText().toString())));
+
+                        @Override
+                        public void afterTextChanged(Editable s) {
+                            if (editTextWe.getText().toString().matches("")) {
+                                editTextThem.setText(String.valueOf(162));
+                            } else
+                                editTextThem.setText(String.valueOf(162 - Integer.parseInt(editTextWe.getText().toString())));
                         }
-                    }
-                });
+                    });
+                    
 
 
         toggleButton20We.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -318,6 +320,7 @@ public class InsertResultActivity extends AppCompatActivity {
             intent.putExtra("emptyList", false);
             intent.putExtra("we",pointsWe);
             intent.putExtra("them",pointsThem);
+            intent.putExtra("upTo",upTo);
             startActivity(intent);
         }
         else{

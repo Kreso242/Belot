@@ -45,11 +45,12 @@
 </TableLayout>
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="420dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
         android:layout_below="@+id/table">
+
        <TableRow>
             <LinearLayout
                 android:id="@+id/LinearLayoutItemWe"
@@ -62,14 +63,14 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:layout_marginRight="2dp"
-                android:background="@drawable/background_call">
+                android:background="@drawable/background_items">
 
             <android.support.v7.widget.RecyclerView
                     android:id="@+id/rvViewWe"
-                    android:layout_width="wrap_content"
-                    android:background="#ffffff"
+                    android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1">
+
                 </android.support.v7.widget.RecyclerView>
             </LinearLayout>
 
@@ -85,24 +86,60 @@
                android:layout_weight="1"
                android:gravity="center"
                android:layout_marginLeft="2dp"
-               android:background="@drawable/background_call">
+               android:background="@drawable/background_items">
                    <android.support.v7.widget.RecyclerView
                        android:id="@+id/rvViewThem"
-                       android:layout_width="wrap_content"
+                       android:layout_width="match_parent"
                        android:layout_height="0dp"
-                       android:background="#ffffff"
-                       android:layout_weight="1">
+                       android:layout_weight="1"
+                       android:layout_gravity="center_horizontal">
                    </android.support.v7.widget.RecyclerView>
                </LinearLayout>
        </TableRow>
     </TableLayout>
 
+    <TableLayout
+        android:id="@+id/results"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_above="@+id/buttonLayout">
+
+        <TableRow>
+            <TextView
+                android:id="@+id/resultWe"
+                android:background="@drawable/background_call"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="20dp"
+                android:textColor="#990303"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginRight="2dp" />
+            <TextView
+                android:id="@+id/resultThem"
+                android:background="@drawable/background_call"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="20dp"
+                android:textColor="#990303"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginLeft="2dp"/>
+        </TableRow>
+    </TableLayout>
+
     <RelativeLayout
+        android:id="@+id/buttonLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        >
-
+        android:layout_alignParentBottom="true">
 
         <Button
             android:id="@+id/addResultButton"

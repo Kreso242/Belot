@@ -56,14 +56,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         notifyDataSetChanged();
     }
 
-    //  ova metoda ti ne treba jer recycleru predaješ cijeli array kroz metodu addData
-//    public void insertNewItem(String name,int position){
-//        if(position>=0 && position<=points.size()){
-//            points.add(position,name);
-//            notifyItemInserted(position);
-//        }
-//    }
-
     public void removeItem(int position){
         if(position>=0 && position<points.size()){
             points.remove(position);
