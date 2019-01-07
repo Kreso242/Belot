@@ -143,21 +143,41 @@
 
         <Button
             android:id="@+id/addResultButton"
-            android:layout_width="150dp"
+            android:layout_width="110dp"
             android:layout_height="50dp"
             android:background="@drawable/table"
             android:text="ADD RESULT"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="20dp"
             android:layout_marginRight="10dp"
-            android:layout_alignParentRight="true"/>
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"
+            android:textSize="12dp"
+            />
 
         <Button
-            android:id="@+id/ExitButton2"
-            android:layout_width="150dp"
+            android:id="@+id/BackButton"
+            android:layout_width="110dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
             android:background="@drawable/table"
-            android:text="@string/exit_game"
+            android:text="BACK"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:textSize="12dp"
+
+            />
+
+        <Button
+            android:id="@+id/removeButton"
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:background="@drawable/table"
+            android:text="REMOVE LAST"
+            android:layout_marginBottom="20dp"
+            android:layout_centerInParent="true"
+            android:textSize="12dp"
+
             />
 
     </RelativeLayout>

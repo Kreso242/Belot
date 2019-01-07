@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
@@ -23,14 +25,13 @@ import java.util.List;
 import java.util.Locale;
 import java.util.stream.IntStream;
 
-public class GameActivity extends AppCompatActivity implements ImageClickInterface   {
+public class GameActivity extends AppCompatActivity {
 
-    private Button addResultButton,exitButton;
+    private Button addResultButton,backButton,removeButton;
     private int sumWe=0,sumThem=0;
     private int upTo;
     private RecyclerView recyclerViewWe,recyclerViewThem;
-    private RecyclerViewAdapter adapterWe;
-    private RecyclerViewAdapter2 adapterThem;
+    private RecyclerViewAdapter adapterWe,adapterThem;
     private TextView resultWe,resultThem;
     private TextView winner,who_is_winner;
     private ArrayList<Integer> pointsWe=new ArrayList<>();
@@ -57,7 +58,7 @@ public class GameActivity extends AppCompatActivity implements ImageClickInterfa
             recyclerViewThem.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
 
             adapterWe = new RecyclerViewAdapter(this);
-            adapterThem=new RecyclerViewAdapter2(this);
+            adapterThem=new RecyclerViewAdapter(this);
 
             recyclerViewWe.setAdapter(adapterWe);
             recyclerViewThem.setAdapter(adapterThem);
@@ -95,12 +96,12 @@ public class GameActivity extends AppCompatActivity implements ImageClickInterfa
                 }
             }
 
-            exitButton=(Button)findViewById(R.id.ExitButton2);
-            exitButton.setOnClickListener(new View.OnClickListener() {
+            backButton=(Button)findViewById(R.id.BackButton);
+            backButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    finishAffinity();
-                    System.exit(0);
+                    Intent intent=new Intent(getApplicationContext(),StartingPageActivity.class);
+                    startActivity(intent);
                 }
             });
 
@@ -109,6 +110,26 @@ public class GameActivity extends AppCompatActivity implements ImageClickInterfa
                 @Override
                 public void onClick(View v) {
                     addResult();
+                }
+            });
+
+            removeButton=(Button)findViewById(R.id.removeButton);
+            removeButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(adapterWe.getItemCount()!=0) {
+                        int sumWeTemp=pointsWe.get(adapterWe.getItemCount()-1);
+                        int sumThemTemp=pointsThem.get(adapterThem.getItemCount()-1);
+                        adapterWe.removeItem(adapterWe.getItemCount()-1);
+                        adapterThem.removeItem(adapterThem.getItemCount()-1);
+                        sumWe=sumWe-sumWeTemp;
+                        sumThem=sumThem-sumThemTemp;
+
+                        resultWe.setText(String.valueOf(sumWe));
+                        resultThem.setText(String.valueOf(sumThem));
+                    }
+                    else
+                        Toast.makeText(getApplicationContext(),"Table is empty!",Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -128,8 +149,11 @@ public class GameActivity extends AppCompatActivity implements ImageClickInterfa
 
     }
 
-    public void onImageClicked(View view, int position){
-        adapterWe.removeItem(position);
+
+    @Override
+    public void onBackPressed(){
+        Toast toast=Toast.makeText(getApplicationContext(),"Click back if you want to leave this page!",Toast.LENGTH_LONG);
+        toast.show();
     }
 
 

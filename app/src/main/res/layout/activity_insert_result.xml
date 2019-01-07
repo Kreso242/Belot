@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameActivity"
+    tools:context=".InsertResultActivity"
     android:layout_marginLeft="4dp"
     android:layout_marginTop="4dp"
     android:layout_marginBottom="4dp"
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="4dp"
         android:layout_below="@+id/result_table"
         android:background="@drawable/background_call"
         android:paddingLeft="6dp"
@@ -93,10 +93,11 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="4dp"
         android:layout_below="@+id/results"
         android:background="@drawable/background_call">
         <TableRow>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -113,8 +114,8 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_marginLeft="1dp"
-                android:layout_marginBottom="4dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="4dp"
                 android:textOn="20"
                 android:textOff="20"/>
 
@@ -127,7 +128,7 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_marginLeft="1dp"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="2dp"
                 android:layout_marginTop="4dp"
                 android:textOn="40"
                 android:textOff="40"/>
@@ -143,10 +144,24 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_marginLeft="1dp"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="2dp"
                 android:layout_marginTop="4dp"
                 android:textOn="50"
                 android:textOff="50"/>
+
+            <ToggleButton
+                android:id="@+id/toggleButton80We"
+                android:background="@drawable/togglebutton_selector"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginLeft="1dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="4dp"
+                android:textOn="80"
+                android:textOff="80"/>
 
 
             <ToggleButton
@@ -158,7 +173,7 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_marginLeft="1dp"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="2dp"
                 android:layout_marginTop="4dp"
                 android:textOn="90"
                 android:textOff="90"/>
@@ -172,7 +187,7 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_marginLeft="1dp"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="2dp"
                 android:layout_marginTop="4dp"
                 android:textOn="100"
                 android:textOff="100"/>
@@ -186,7 +201,7 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_marginLeft="1dp"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="2dp"
                 android:layout_marginTop="4dp"
                 android:textOn="150"
                 android:textOff="150"/>
@@ -200,7 +215,7 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_marginLeft="1dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="2dp"
                 android:layout_marginTop="4dp"
                 android:textOn="200"
                 android:textOff="200"
@@ -224,8 +239,8 @@
                     android:layout_weight="1"
                     android:layout_gravity="center"
                     android:layout_marginLeft="1dp"
-                    android:layout_marginBottom="4dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="4dp"
                     android:textOn="20"
                     android:textOff="20"/>
 
@@ -238,7 +253,7 @@
                     android:layout_weight="1"
                     android:layout_gravity="center"
                     android:layout_marginLeft="1dp"
-                    android:layout_marginBottom="4dp"
+                    android:layout_marginBottom="2dp"
                     android:layout_marginTop="4dp"
                     android:textOn="40"
                     android:textOff="40"/>
@@ -252,10 +267,24 @@
                     android:layout_weight="1"
                     android:layout_gravity="center"
                     android:layout_marginLeft="1dp"
-                    android:layout_marginBottom="4dp"
+                    android:layout_marginBottom="2dp"
                     android:layout_marginTop="4dp"
                     android:textOn="50"
                     android:textOff="50"/>
+
+                <ToggleButton
+                    android:id="@+id/toggleButton80Them"
+                    android:background="@drawable/togglebutton_selector"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="4dp"
+                    android:textOn="80"
+                    android:textOff="80"/>
 
 
                 <ToggleButton
@@ -267,7 +296,7 @@
                     android:layout_weight="1"
                     android:layout_gravity="center"
                     android:layout_marginLeft="1dp"
-                    android:layout_marginBottom="4dp"
+                    android:layout_marginBottom="2dp"
                     android:layout_marginTop="4dp"
                     android:textOn="90"
                     android:textOff="90"/>
@@ -281,7 +310,7 @@
                     android:layout_weight="1"
                     android:layout_gravity="center"
                     android:layout_marginLeft="1dp"
-                    android:layout_marginBottom="4dp"
+                    android:layout_marginBottom="2dp"
                     android:layout_marginTop="4dp"
                     android:textOn="100"
                     android:textOff="100"/>
@@ -295,7 +324,7 @@
                     android:layout_weight="1"
                     android:layout_gravity="center"
                     android:layout_marginLeft="1dp"
-                    android:layout_marginBottom="4dp"
+                    android:layout_marginBottom="2dp"
                     android:layout_marginTop="4dp"
                     android:textOn="150"
                     android:textOff="150"/>
@@ -309,7 +338,7 @@
                     android:layout_weight="1"
                     android:layout_gravity="center"
                     android:layout_marginLeft="1dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="2dp"
                     android:layout_marginTop="4dp"
                     android:textOn="200"
                     android:textOff="200"

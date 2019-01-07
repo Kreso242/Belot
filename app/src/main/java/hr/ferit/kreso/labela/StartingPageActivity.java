@@ -50,7 +50,7 @@ public class StartingPageActivity extends AppCompatActivity {
 
 
     private void openRules() {
-        goToUrl("http://stackoverflow.com/");
+        goToUrl("http://www.igrajkarte.com/blog/post/belot-bela-pravila/");
     }
 
     private void goToUrl(String url) {
@@ -60,7 +60,7 @@ public class StartingPageActivity extends AppCompatActivity {
     }
 
     private void exitGame() {
-        finish();
+        finishAffinity();
         System.exit(0);
     }
 

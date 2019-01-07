@@ -18,7 +18,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private ArrayList<Integer> points = new ArrayList<>();
     private Context context;
-    private ImageClickInterface imageClick;
 
 
    public RecyclerViewAdapter(Context context){
@@ -36,12 +35,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         holder.setName(points.get(position).toString());
-        holder.parent_layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context,points.get(position),Toast.LENGTH_SHORT).show();
-            }
-        });
+
     }
 
     @Override
@@ -69,6 +63,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         RelativeLayout parent_layout;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
             textViewWe=itemView.findViewById(R.id.tvName);
             parent_layout=itemView.findViewById(R.id.parent_layout);
         }
