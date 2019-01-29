@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
 
+import java.util.Objects;
+
 public class GameSelectorActivity extends AppCompatActivity {
 
     private RadioButton radioButton1001;
@@ -16,12 +18,12 @@ public class GameSelectorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide(); //hide app name bar
+        Objects.requireNonNull(getSupportActionBar()).hide(); //hide app name bar
         setContentView(R.layout.activity_game_selector);
 
-        radioButton1001=(RadioButton)findViewById(R.id.radioButton1001);
-        radioButton701=(RadioButton)findViewById(R.id.radioButton701);
-        radioButton501=(RadioButton)findViewById(R.id.radioButton501);
+        radioButton1001=findViewById(R.id.radioButton1001);
+        radioButton701=findViewById(R.id.radioButton701);
+        radioButton501=findViewById(R.id.radioButton501);
 
         radioButton1001.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -57,6 +57,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         }
     }
 
+    public void removeAll(){
+           points.removeAll(points);
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView textViewWe;

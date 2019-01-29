@@ -98,7 +98,7 @@
        </TableRow>
     </TableLayout>
 
-    <TableLayout
+    <LinearLayout
         android:id="@+id/results"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -107,7 +107,6 @@
         android:layout_marginBottom="20dp"
         android:layout_above="@+id/buttonLayout">
 
-        <TableRow>
             <TextView
                 android:id="@+id/resultWe"
                 android:background="@drawable/background_call"
@@ -132,8 +131,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:layout_marginLeft="2dp"/>
-        </TableRow>
-    </TableLayout>
+
+    </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/buttonLayout"

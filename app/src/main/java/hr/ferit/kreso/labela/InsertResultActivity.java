@@ -83,7 +83,6 @@ public class InsertResultActivity extends AppCompatActivity implements Call_dial
         toggleButton200Them=(ToggleButton)findViewById(R.id.toggleButton200Them);
 
 
-
         final TextWatcher textWatcherWe = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -408,7 +407,6 @@ public class InsertResultActivity extends AppCompatActivity implements Call_dial
         sumThem=sumThem+Integer.parseInt(editTextThem.getText().toString())+callSumThem;
             return sumThem;
     }
-
 
     private void goBackToTable(int sum) {
 

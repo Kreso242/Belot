@@ -118,10 +118,16 @@ public class GameActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if(adapterWe.getItemCount()!=0) {
+
                         int sumWeTemp=pointsWe.get(adapterWe.getItemCount()-1);
                         int sumThemTemp=pointsThem.get(adapterThem.getItemCount()-1);
-                        adapterWe.removeItem(adapterWe.getItemCount()-1);
-                        adapterThem.removeItem(adapterThem.getItemCount()-1);
+
+                        pointsWe.remove(adapterWe.getItemCount() - 1);
+                        pointsThem.remove(adapterThem.getItemCount() - 1);
+
+                        adapterWe.addData(pointsWe);
+                        adapterThem.addData(pointsThem);
+
                         sumWe=sumWe-sumWeTemp;
                         sumThem=sumThem-sumThemTemp;
 

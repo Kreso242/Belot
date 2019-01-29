@@ -13,6 +13,8 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Objects;
+
 public class Call_dialog extends AppCompatDialogFragment {
 
     private RadioButton radioButtonWe,radioButtonThem;
@@ -23,7 +25,7 @@ public class Call_dialog extends AppCompatDialogFragment {
 
     public android.app.Dialog onCreateDialog(Bundle savedInstanceState) {
 
-        final AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
+        final AlertDialog.Builder builder=new AlertDialog.Builder(Objects.requireNonNull(getActivity()));
 
         LayoutInflater inflater=getActivity().getLayoutInflater();
         View view=inflater.inflate(R.layout.call_layout,null);
@@ -39,6 +41,7 @@ public class Call_dialog extends AppCompatDialogFragment {
                         if (!radioButtonWe.isChecked() && !radioButtonThem.isChecked()) {
                             Call_dialog call_dialog = new Call_dialog();
                             call_dialog.setCancelable(false);
+                            assert getFragmentManager() != null;
                             call_dialog.show(getFragmentManager(), "tag");
                         }
                         if (radioButtonWe.isChecked()) {

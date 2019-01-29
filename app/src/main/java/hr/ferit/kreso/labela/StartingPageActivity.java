@@ -7,29 +7,27 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class StartingPageActivity extends AppCompatActivity {
+import java.util.Objects;
 
-    private Button nextGameButton;
-    private Button rulesButton;
-    private Button exitGameButton;
+public class StartingPageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getSupportActionBar().hide(); //hide app name bar
+        Objects.requireNonNull(getSupportActionBar()).hide(); //hide app name bar
 
         setContentView(R.layout.activity_starting_page);
 
-        nextGameButton=(Button)findViewById(R.id.NewGameButton);
-        rulesButton=(Button)findViewById(R.id.RulesButton);
-        exitGameButton=(Button)findViewById(R.id.ExitButton);
+        Button nextGameButton = findViewById(R.id.NewGameButton);
+        Button rulesButton = findViewById(R.id.RulesButton);
+        Button exitGameButton = findViewById(R.id.ExitButton);
 
         nextGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    openGame();
-                }
+                openGame();
+            }
         });
 
         rulesButton.setOnClickListener(new View.OnClickListener() {
@@ -54,8 +52,8 @@ public class StartingPageActivity extends AppCompatActivity {
     }
 
     private void goToUrl(String url) {
-        Uri uriUrl=Uri.parse(url);
-        Intent launchBrowser= new Intent(Intent.ACTION_VIEW,uriUrl);
+        Uri uriUrl = Uri.parse(url);
+        Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
         startActivity(launchBrowser);
     }
 
@@ -65,7 +63,7 @@ public class StartingPageActivity extends AppCompatActivity {
     }
 
     private void openGame() {
-        Intent intent=new Intent(this,GameSelectorActivity.class);
+        Intent intent = new Intent(this, GameSelectorActivity.class);
         startActivity(intent);
     }
 
