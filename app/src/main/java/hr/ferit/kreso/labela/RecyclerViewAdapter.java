@@ -1,6 +1,5 @@
 package hr.ferit.kreso.labela;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,19 +15,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
 
     private ArrayList<Integer> points = new ArrayList<>();
-    private Context context;
 
-
-   public RecyclerViewAdapter(Context context){
-       this.context = context;
-    }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.cell_name,parent,false);
-        ViewHolder holder=new ViewHolder(view);
-        return holder;
+        return new ViewHolder(view);
     }
 
     @Override
@@ -42,29 +35,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return points.size();
     }
 
-
-    public void addData(List<Integer> data){
+    void addData(List<Integer> data){
         points.clear();
         points.addAll(data);
         notifyDataSetChanged();
-    }
-
-    public void removeItem(int position){
-        if(position>=0 && position<points.size()){
-            points.remove(position);
-            notifyItemRemoved(position);
-        }
-    }
-
-    public void removeAll(){
-           points.removeAll(points);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView textViewWe;
         RelativeLayout parent_layout;
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             textViewWe=itemView.findViewById(R.id.tvName);

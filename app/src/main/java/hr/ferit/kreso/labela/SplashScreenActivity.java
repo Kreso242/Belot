@@ -31,14 +31,11 @@ public class SplashScreenActivity extends AppCompatActivity {
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/Sweetland.ttf");
         textView.setTypeface(custom_font);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
+        new Handler().postDelayed(() -> {
 
-                Intent mainIntent = new Intent(SplashScreenActivity.this, StartingPageActivity.class);
-                startActivity(mainIntent);
-                finish();
-            }
+            Intent mainIntent = new Intent(SplashScreenActivity.this, StartingPageActivity.class);
+            startActivity(mainIntent);
+            finish();
         }, SPLASH_DISPLAY_LENGTH);
     }
 }

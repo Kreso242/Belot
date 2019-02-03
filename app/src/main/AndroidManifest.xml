@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".StartingPageActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:screenOrientation="portrait"/>
         <activity android:name=".GameActivity"
             android:screenOrientation="portrait"/>

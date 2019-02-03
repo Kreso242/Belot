@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -25,24 +24,26 @@
                 android:background="@drawable/table"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:text="WE"
-                android:textSize="20dp"
+                android:text="@string/WE_text"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_marginRight="2dp" />
+                android:layout_marginEnd="2dp" />
             <TextView
                 android:background="@drawable/table"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:text="THEM"
-                android:textSize="20dp"
+                android:text="@string/YOU_text"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_marginLeft="2dp"/>
+                android:layout_marginStart="2dp"/>
         </TableRow>
+
 </TableLayout>
+
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="420dp"
@@ -62,7 +63,7 @@
                 tools:context=".GameActivity"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_marginRight="2dp"
+                android:layout_marginEnd="2dp"
                 android:background="@drawable/background_items">
 
             <android.support.v7.widget.RecyclerView
@@ -70,9 +71,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1">
-
                 </android.support.v7.widget.RecyclerView>
+
             </LinearLayout>
+
 
            <LinearLayout
                android:id="@+id/LinearLayoutItemThem"
@@ -82,10 +84,9 @@
                xmlns:tools="http://schemas.android.com/tools"
                android:orientation="vertical"
                tools:context=".GameActivity"
-               android:layout_toRightOf="@+id/LinearLayoutItemWe"
                android:layout_weight="1"
                android:gravity="center"
-               android:layout_marginLeft="2dp"
+               android:layout_marginStart="2dp"
                android:background="@drawable/background_items">
                    <android.support.v7.widget.RecyclerView
                        android:id="@+id/rvViewThem"
@@ -112,25 +113,25 @@
                 android:background="@drawable/background_call"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:textSize="20dp"
-                android:textColor="#990303"
+                android:text="@string/zero"
+                android:textSize="20sp"
+                android:textColor="@color/scoreColor"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_marginRight="2dp" />
+                android:layout_marginEnd="2dp" />
             <TextView
                 android:id="@+id/resultThem"
                 android:background="@drawable/background_call"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:textSize="20dp"
-                android:textColor="#990303"
+                android:text="@string/zero"
+                android:textSize="20sp"
+                android:textColor="@color/scoreColor"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_marginLeft="2dp"/>
+                android:layout_marginEnd="2dp"/>
 
     </LinearLayout>
 
@@ -145,12 +146,12 @@
             android:layout_width="110dp"
             android:layout_height="50dp"
             android:background="@drawable/table"
-            android:text="ADD RESULT"
+            android:text="@string/addResult"
             android:layout_marginBottom="20dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_centerInParent="true"
-            android:layout_alignParentRight="true"
-            android:textSize="12dp"
+            android:layout_alignParentEnd="true"
+            android:textSize="12sp"
             />
 
         <Button
@@ -158,13 +159,12 @@
             android:layout_width="110dp"
             android:layout_height="50dp"
             android:background="@drawable/table"
-            android:text="BACK"
+            android:text="@string/goBack"
             android:layout_marginBottom="20dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:layout_centerInParent="true"
-            android:layout_alignParentLeft="true"
-            android:textSize="12dp"
-
+            android:layout_alignParentStart="true"
+            android:textSize="12sp"
             />
 
         <Button
@@ -172,16 +172,13 @@
             android:layout_width="110dp"
             android:layout_height="50dp"
             android:background="@drawable/table"
-            android:text="REMOVE LAST"
+            android:text="@string/removeLast"
             android:layout_marginBottom="20dp"
             android:layout_centerInParent="true"
-            android:textSize="12dp"
-
+            android:textSize="12sp"
             />
 
     </RelativeLayout>
-
-     
 
 </RelativeLayout>
 

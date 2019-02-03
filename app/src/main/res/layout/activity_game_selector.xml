@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,103 +13,111 @@
     <RelativeLayout
         android:id="@+id/rlLastGame"
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="10dp"
-            android:text="Imate jednu ne završenu igru: "
-            android:textColor="#163e0d"
-            android:textSize="18dp"
-            android:textStyle="bold" />
+            android:text="@string/notFinished"
+            android:textColor="@color/textColor"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
 
         <TextView
             android:id="@+id/tvMi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
             android:layout_marginTop="50dp"
-            android:text="MI:"
-            android:textColor="#163e0d"
-            android:textSize="18dp"
+            android:text="@string/WE_text_score"
+            android:textColor="@color/textColor"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvSumPointsWe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginStart="70dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="40dp"
-            android:textColor="#cf0e0e"
-            android:textSize="30dp" />
+            android:textColor="@color/scoreColor"
+            android:textSize="30sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="200dp"
+            android:layout_marginStart="170dp"
             android:layout_marginTop="50dp"
-            android:text="VI:"
-            android:textColor="#163e0d"
-            android:textSize="18dp"
+            android:text="@string/YOU_text_score"
+            android:textColor="@color/textColor"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvSumPointsThem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="230dp"
+            android:layout_marginStart="200dp"
             android:layout_marginTop="40dp"
-            android:textColor="#cf0e0e"
-            android:textSize="30dp" />
+            android:textColor="@color/scoreColor"
+            android:textSize="30sp" />
+        </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:text="ILI"
-            android:textColor="#163e0d"
-            android:textSize="30dp"
+            android:text="@string/or"
+            android:textColor="@color/textColor"
+            android:textSize="30sp"
             android:textStyle="bold" />
     </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Započnite novu igru!"
-        android:textColor="#cf0e0e"
-        android:textSize="30dp"
+        android:text="@string/startNewGame"
+        android:textColor="@color/scoreColor"
+        android:textSize="30sp"
         android:layout_centerInParent="true"/>
+
     <LinearLayout
         android:id="@+id/textViewLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
         android:layout_marginBottom="100dp"
-        android:layout_toLeftOf="@+id/radioButtonsLayout">
+        android:layout_toStartOf="@+id/radioButtonsLayout">
 
         <TextView
             android:id="@+id/playingToTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Playing up to:"
-            android:textColor="#163e0d"
-            android:textSize="25dp"
-            android:textStyle="bold" />
+            android:text="@string/playingUpTo"
+            android:textColor="@color/textColor"
+            android:textSize="25sp"
+            android:textStyle="bold"/>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/radioButtonsLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="25dp"
         android:layout_marginBottom="25dp"
         android:orientation="vertical">
 
@@ -122,40 +129,32 @@
                 android:id="@+id/radioButton1001"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/radioButtonsLayout"
-                android:layout_alignRight="@+id/playingToTextView"
                 android:layout_marginBottom="3dp"
-                android:text="1001"
+                android:text="@string/number1001"
                 android:textAlignment="center"
-                android:textColor="#163e0d"
-                android:textSize="25dp"
+                android:textColor="@color/textColor"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/radioButton701"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/radioButtonsLayout"
-                android:layout_alignRight="@+id/playingToTextView"
                 android:layout_marginBottom="3dp"
-                android:text="701"
+                android:text="@string/number701"
                 android:textAlignment="center"
-
-                android:textColor="#163e0d"
-                android:textSize="25dp"
+                android:textColor="@color/textColor"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/radioButton501"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/radioButtonsLayout"
-                android:layout_alignRight="@+id/playingToTextView"
-                android:text="501"
+                android:text="@string/number501"
                 android:textAlignment="center"
-                android:textColor="#163e0d"
-
-                android:textSize="25dp"
+                android:textColor="@color/textColor"
+                android:textSize="25sp"
                 android:textStyle="bold" />
         </RadioGroup>
 

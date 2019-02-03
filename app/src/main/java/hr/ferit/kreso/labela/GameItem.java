@@ -1,5 +1,6 @@
 package hr.ferit.kreso.labela;
 
+
 import io.realm.RealmObject;
 
 public class GameItem extends RealmObject {

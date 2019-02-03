@@ -1,34 +1,32 @@
 package hr.ferit.kreso.labela;
 
-import android.content.DialogInterface;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatDialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 public class Dialog extends AppCompatDialogFragment {
 
-    private TextView who_is_winner,winner;
-
+    @NonNull
     public android.app.Dialog onCreateDialog(Bundle savedInstanceState) {
-        AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
+        AlertDialog.Builder builder=new AlertDialog.Builder(Objects.requireNonNull(getActivity()));
 
         LayoutInflater inflater=getActivity().getLayoutInflater();
-        View view=inflater.inflate(R.layout.layout_dialog,null);
+        @SuppressLint("InflateParams") View view=inflater.inflate(R.layout.layout_dialog,null);
 
         builder.setView(view).setTitle(" ")
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Intent intent=new Intent(getActivity(),StartingPageActivity.class);
-                startActivity(intent);
-            }
-        });
-        who_is_winner=view.findViewById(R.id.who_is_winner);
-        winner=view.findViewById(R.id.winner);
+                .setPositiveButton("OK", (dialog, which) -> {
+                    Intent intent=new Intent(getActivity(),StartingPageActivity.class);
+                    startActivity(intent);
+                });
+        TextView winner = view.findViewById(R.id.winner);
 
         winner.setText(getTag());
 

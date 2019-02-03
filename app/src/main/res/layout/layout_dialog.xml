@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="100dp"
-    android:background="#f1f0f0">
+    android:color="@color/grey">
 
 <LinearLayout
     android:id="@+id/dialog_layout"
@@ -17,11 +17,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_margin="10dp"
-        android:textColor="#163e0d"
+        android:textColor="@color/textColor"
         android:textStyle="bold"
-        android:text="Winner is:"
+        android:text="@string/WinnerIs"
        />
 
     <TextView
@@ -29,21 +29,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_margin="10dp"
-        android:textColor="#163e0d"
+        android:textColor="@color/textColor"
         android:textStyle="bold"
-        android:text="pobjednik"
+        android:text="@string/winner"
         />
 </LinearLayout>
-
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:src="@mipmap/la_bela_icon_transparent"
-            android:layout_toLeftOf="@+id/dialog_layout"/>
+            android:layout_toStartOf="@+id/dialog_layout"/>
 
         <ImageView
             android:layout_width="wrap_content"
@@ -51,7 +50,6 @@
             android:layout_gravity="center"
             android:layout_centerVertical="true"
             android:src="@mipmap/la_bela_icon_transparent"
-            android:layout_toRightOf="@+id/dialog_layout"/>
-
+            android:layout_toEndOf="@+id/dialog_layout"/>
 
 </RelativeLayout>

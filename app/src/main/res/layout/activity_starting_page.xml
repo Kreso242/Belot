@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StartingPageActivity"
-    android:background="#ffffff">
+    android:background="@color/white">
 
-    <LinearLayout
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/karte"/>
+
+    <TextView
+        android:id="@+id/appName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
-
-        <ImageView
-            android:layout_width="307dp"
-            android:layout_height="419dp"
-            android:layout_centerInParent="true"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:src="@mipmap/la_bela_icon" />
-    </LinearLayout>
+        android:text="@string/app_name"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="350dp"
+        android:textSize="35sp"
+        />
 
     <LinearLayout
         android:id="@+id/newGame_and_rules_layout"
@@ -37,7 +37,7 @@
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:background="@drawable/table"
-            android:layout_marginRight="25dp"
+            android:layout_marginEnd="25dp"
             android:text="@string/rules"/>
 
         <Button
@@ -45,7 +45,7 @@
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:background="@drawable/table"
-            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
             android:text="@string/new_game"/>
     </LinearLayout>
 

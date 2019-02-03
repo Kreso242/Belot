@@ -17,46 +17,26 @@ import io.realm.RealmResults;
 
 public class GameSelectorActivity extends AppCompatActivity {
 
-    private RadioButton radioButton1001;
-    private RadioButton radioButton701;
-    private RadioButton radioButton501;
-    private RelativeLayout rlLastGame;
-    private TextView tvSumPointsWe, tvSumPointsThem;
     private int upTo1001 = 1001, upTo701 = 701, upTo501 = 501;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Objects.requireNonNull(getSupportActionBar()).hide(); //hide app name bar
+        Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.activity_game_selector);
 
-        radioButton1001 = findViewById(R.id.radioButton1001);
-        radioButton701 = findViewById(R.id.radioButton701);
-        radioButton501 = findViewById(R.id.radioButton501);
-        rlLastGame = findViewById(R.id.rlLastGame);
-        tvSumPointsWe = findViewById(R.id.tvSumPointsWe);
-        tvSumPointsThem = findViewById(R.id.tvSumPointsThem);
+        RadioButton radioButton1001 = findViewById(R.id.radioButton1001);
+        RadioButton radioButton701 = findViewById(R.id.radioButton701);
+        RadioButton radioButton501 = findViewById(R.id.radioButton501);
+        RelativeLayout rlLastGame = findViewById(R.id.rlLastGame);
+        TextView tvSumPointsWe = findViewById(R.id.tvSumPointsWe);
+        TextView tvSumPointsThem = findViewById(R.id.tvSumPointsThem);
 
-        radioButton1001.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openGameTable(upTo1001);
-            }
-        });
+        radioButton1001.setOnClickListener(v -> openGameTable(upTo1001));
 
-        radioButton701.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openGameTable(upTo701);
-            }
-        });
+        radioButton701.setOnClickListener(v -> openGameTable(upTo701));
 
-        radioButton501.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openGameTable(upTo501);
-            }
-        });
+        radioButton501.setOnClickListener(v -> openGameTable(upTo501));
 
 
         ArrayList<GameItem> list = new ArrayList<>();
@@ -85,9 +65,7 @@ public class GameSelectorActivity extends AppCompatActivity {
         }
         realm.close();
 
-        rlLastGame.setOnClickListener(view -> {
-            openLastGameTable();
-        });
+        rlLastGame.setOnClickListener(view -> openLastGameTable());
 
     }
 
